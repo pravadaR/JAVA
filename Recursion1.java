@@ -85,4 +85,49 @@ public class Recursion1 {
     //     int n = 7;
     //     printFib(a, b, n - 2);
     // }
+
+    //print x^n (stack height=n)
+    // public static int calPower(int x,int n)
+    // {
+    //     if (n == 0) {
+    //         return 1;
+    //     }
+    //     if (x == 0) {
+    //         return 0;
+    //     }
+    //     int xPownm1 = calPower(x, n - 1);
+    //     int xPown = x * xPownm1;
+    //     return xPown;
+    // }
+
+    // public static void main(String args[])
+    // {
+    //     int x = 2, n = 5;
+    //     int ans = calPower(x, n);
+    //     System.out.println(ans);
+    // }
+
+    //print x^n (stack height=logn)
+    public static int calPower1(int x,int n)
+    {
+        if (n == 0) {
+            return 1;
+        }
+        if (x == 1) {
+            return 0;
+        }
+        //if n is even
+        if (n % 2 == 0) {
+            return calPower1(x, n/2) * calPower1(x, n/2);
+        } else {
+            return calPower1(x, n/2) * calPower1(x, n/2) * x;
+
+        }
+    }
+    public static void main(String args[])
+    {
+        int x = 2, n = 5;
+        int ans = calPower1(x, n);
+        System.out.println(ans);
+    }
 }
