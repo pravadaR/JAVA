@@ -55,7 +55,7 @@ public class Nqueens {
     public static void saveBoard(char[][] board, List<List<String>> allBoards)
     {
         String row="";
-        List<String> newBoard=new ArrayList();
+        List<String> newBoard=new ArrayList<String>();
 
         for(int i=0;i<board.length;i++)
         {
